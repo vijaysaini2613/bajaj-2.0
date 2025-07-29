@@ -1,0 +1,57 @@
+[
+  {
+    "query": "Can I claim for my diabetes treatment?",
+    "expected_match": "Claims for pre-existing medical conditions are excluded",
+    "user_metadata": {
+      "age": 45,
+      "policy_duration": 60,
+      "existing_conditions": true
+    },
+    "expected_decision": false,
+    "expected_reason": "pre-existing condition"
+  },
+  {
+    "query": "Is dental treatment covered in my policy?", 
+    "expected_match": "Dental treatment is covered up to Rs. 50,000",
+    "user_metadata": {
+      "age": 30,
+      "policy_duration": 200,
+      "existing_conditions": false
+    },
+    "expected_decision": true,
+    "expected_reason": "dental coverage available"
+  },
+  {
+    "query": "Can I get treatment for depression?",
+    "expected_match": "Mental health treatments are covered up to Rs. 1,00,000",
+    "user_metadata": {
+      "age": 35,
+      "policy_duration": 400,
+      "existing_conditions": false  
+    },
+    "expected_decision": true,
+    "expected_reason": "mental health coverage"
+  },
+  {
+    "query": "Is plastic surgery covered?",
+    "expected_match": "Cosmetic or plastic surgery is excluded unless medically necessary",
+    "user_metadata": {
+      "age": 28,
+      "policy_duration": 100,
+      "existing_conditions": false
+    },
+    "expected_decision": false,
+    "expected_reason": "cosmetic surgery exclusion"
+  },
+  {
+    "query": "Can I claim for hospitalization?",
+    "expected_match": "Coverage includes hospitalization expenses up to the sum insured",
+    "user_metadata": {
+      "age": 40,
+      "policy_duration": 45,
+      "existing_conditions": false
+    },
+    "expected_decision": true,
+    "expected_reason": "hospitalization covered"
+  }
+]

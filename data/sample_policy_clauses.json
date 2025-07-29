@@ -1,0 +1,72 @@
+[
+  {
+    "clause_text": "Claims for pre-existing medical conditions are excluded from coverage unless specifically declared and accepted by the insurer.",
+    "section": "Exclusions",
+    "code": "Code-Excl01",
+    "clause_type": "exclusion",
+    "policy_type": "health"
+  },
+  {
+    "clause_text": "The policy has a 30-day waiting period for all claims except emergency treatments.",
+    "section": "Conditions", 
+    "code": "Code-Cond01",
+    "clause_type": "condition",
+    "policy_type": "health"
+  },
+  {
+    "clause_text": "Coverage includes hospitalization expenses up to the sum insured amount.",
+    "section": "Benefits",
+    "code": "Code-Cover01", 
+    "clause_type": "coverage",
+    "policy_type": "health"
+  },
+  {
+    "clause_text": "Maternity benefits are covered after 36 months of continuous policy tenure.",
+    "section": "Benefits",
+    "code": "Code-Cover02",
+    "clause_type": "coverage", 
+    "policy_type": "health"
+  },
+  {
+    "clause_text": "Claims arising from self-inflicted injuries or suicide attempts are not covered.",
+    "section": "Exclusions",
+    "code": "Code-Excl02",
+    "clause_type": "exclusion",
+    "policy_type": "health"
+  },
+  {
+    "clause_text": "Dental treatment is covered up to Rs. 50,000 per policy year after 6 months waiting period.",
+    "section": "Benefits",
+    "code": "Code-Cover03",
+    "clause_type": "coverage",
+    "policy_type": "health"
+  },
+  {
+    "clause_text": "Alternative medicine treatments including Ayurveda, Homeopathy are covered up to Rs. 25,000.",
+    "section": "Benefits", 
+    "code": "Code-Cover04",
+    "clause_type": "coverage",
+    "policy_type": "health"
+  },
+  {
+    "clause_text": "Claims for treatment outside India require prior approval from the insurance company.",
+    "section": "Conditions",
+    "code": "Code-Cond02", 
+    "clause_type": "condition",
+    "policy_type": "health"
+  },
+  {
+    "clause_text": "Cosmetic or plastic surgery is excluded unless medically necessary due to accident or illness.",
+    "section": "Exclusions",
+    "code": "Code-Excl03",
+    "clause_type": "exclusion", 
+    "policy_type": "health"
+  },
+  {
+    "clause_text": "Mental health treatments are covered up to Rs. 1,00,000 per policy year.",
+    "section": "Benefits",
+    "code": "Code-Cover05",
+    "clause_type": "coverage",
+    "policy_type": "health"
+  }
+]

@@ -1,0 +1,37 @@
+# Core Web Framework
+fastapi==0.110.0
+uvicorn==0.29.0
+
+# Authentication & Security
+PyJWT==2.8.0
+python-multipart==0.0.6
+
+# Database
+SQLAlchemy==2.0.30
+psycopg2-binary==2.9.9
+
+# Embedding & NLP
+sentence-transformers==2.6.1
+transformers==4.41.1
+torch==2.3.0
+
+# Semantic Search
+faiss-cpu==1.7.4
+
+# Data Processing
+pandas==2.2.2
+numpy==1.26.4
+
+# PDF / Document Handling (if needed later)
+pdfplumber==0.10.2
+PyMuPDF==1.24.4
+
+# Env Configuration
+python-dotenv==1.0.1
+
+# JSON and Serialization
+orjson==3.10.4
+
+# Type checking and linting (optional but recommended)
+mypy==1.10.0
+black==24.4.2
