@@ -1,6 +1,7 @@
 # Core Web Framework
 fastapi==0.110.0
-uvicorn==0.29.0
+uvicorn[standard]==0.29.0
+gunicorn==21.2.0
 
 # Authentication & Security
 PyJWT==2.8.0
@@ -13,7 +14,7 @@ psycopg2-binary==2.9.9
 # Embedding & NLP
 sentence-transformers==2.6.1
 transformers==4.41.1
-torch==2.3.0
+torch>=2.5.0
 
 # Semantic Search
 faiss-cpu==1.7.4
@@ -29,9 +30,12 @@ PyMuPDF==1.24.4
 # Env Configuration
 python-dotenv==1.0.1
 
+# HTTP Client
+requests==2.31.0
+
 # JSON and Serialization
-orjson==3.10.4
+orjson>=3.9.0
 
 # Type checking and linting (optional but recommended)
-mypy==1.10.0
-black==24.4.2
+# mypy==1.10.0  # Commented out for deployment
+# black==24.4.2  # Commented out for deployment
