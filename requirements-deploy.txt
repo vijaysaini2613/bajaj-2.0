@@ -1,0 +1,25 @@
+# Minimal requirements for deployment compatibility
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# Authentication
+PyJWT==2.8.0
+python-multipart==0.0.6
+
+# AI/ML - Pre-compiled wheels only
+sentence-transformers==2.6.1
+torch==2.3.1
+transformers==4.41.1
+faiss-cpu==1.7.4
+
+# Data processing - older stable versions
+pandas==2.1.4
+numpy==1.24.3
+
+# Document processing
+PyMuPDF==1.24.4
+
+# Utilities
+python-dotenv==1.0.1
+requests==2.31.0
+orjson==3.9.0
