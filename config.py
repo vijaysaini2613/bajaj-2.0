@@ -25,7 +25,12 @@ DB_PASSWORD = os.getenv("DB_PASSWORD", "password")
 DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 # Embedding Model Configuration
-EMBEDDING_MODEL_NAME = os.getenv("EMBEDDING_MODEL_NAME", "sentence-transformers/all-MiniLM-L6-v2")
+# Use smaller model for memory-constrained environments like Render free tier
+# paraphrase-albert-small-v2 is much smaller (~43MB) vs all-MiniLM-L6-v2 (~90MB)
+EMBEDDING_MODEL_NAME = os.getenv("EMBEDDING_MODEL_NAME", "paraphrase-albert-small-v2")
+
+# Memory optimization settings
+LOW_MEMORY_MODE = os.getenv("LOW_MEMORY_MODE", "true").lower() == "true"
 
 # Embedding similarity threshold for clause matching
 MATCH_THRESHOLD = float(os.getenv("MATCH_THRESHOLD", "0.75"))

@@ -13,22 +13,50 @@ from config import EMBEDDING_MODEL_NAME, MATCH_THRESHOLD
 class InferencePipeline:
     def __init__(self):
         self.document_processor = DocumentProcessor()
-        self.embedder = Embedder(model_name=EMBEDDING_MODEL_NAME)
+        # Lazy initialization - don't load heavy components at startup
+        self._embedder = None
+        self._vector_store = None
+        self._clause_matcher = None
+        self._decision_engine = None
         
-        # Initialize vector store with embedding dimension (384 for all-MiniLM-L6-v2)
-        self.vector_store = FAISSVectorStore(
-            dim=384, 
-            index_path="models/faiss_index/index.faiss",
-            metadata_path="models/faiss_index/metadata.pkl"
-        )
+    @property
+    def embedder(self):
+        """Lazy load embedder only when needed"""
+        if self._embedder is None:
+            self._embedder = Embedder(model_name=EMBEDDING_MODEL_NAME)
+        return self._embedder
         
-        self.clause_matcher = ClauseMatcher(
-            embedder=self.embedder,
-            store=self.vector_store,
-            threshold=MATCH_THRESHOLD
-        )
+    @property
+    def vector_store(self):
+        """Lazy load vector store only when needed"""
+        if self._vector_store is None:
+            # Initialize vector store with embedding dimension 
+            # paraphrase-albert-small-v2 = 768, all-MiniLM-L6-v2 = 384
+            dim = 768 if "albert" in EMBEDDING_MODEL_NAME else 384
+            self._vector_store = FAISSVectorStore(
+                dim=dim, 
+                index_path="models/faiss_index/index.faiss",
+                metadata_path="models/faiss_index/metadata.pkl"
+            )
+        return self._vector_store
         
-        self.decision_engine = DecisionEngine(clause_matcher=self.clause_matcher)
+    @property 
+    def clause_matcher(self):
+        """Lazy load clause matcher only when needed"""
+        if self._clause_matcher is None:
+            self._clause_matcher = ClauseMatcher(
+                embedder=self.embedder,
+                store=self.vector_store,
+                threshold=MATCH_THRESHOLD
+            )
+        return self._clause_matcher
+        
+    @property
+    def decision_engine(self):
+        """Lazy load decision engine only when needed"""
+        if self._decision_engine is None:
+            self._decision_engine = DecisionEngine()
+        return self._decision_engine
     
     def run(self, file_stream, query: str, metadata: dict = None) -> dict:
         """
