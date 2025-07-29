@@ -21,6 +21,7 @@ numpy==1.24.3
 
 # PDF Processing
 PyMuPDF==1.24.4
+docx2txt==0.8
 
 # Environment & HTTP
 python-dotenv==1.0.1
