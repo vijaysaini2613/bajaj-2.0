@@ -4,7 +4,7 @@ meson==1.1.0
 
 # Core Web Framework
 fastapi==0.110.0
-uvicorn[standard]==0.29.0
+uvicorn==0.29.0
 gunicorn==21.2.0
 
 # Authentication & Security
@@ -18,7 +18,7 @@ psycopg2-binary==2.9.9
 # Embedding & NLP
 sentence-transformers==2.6.1
 transformers==4.41.1
-torch>=2.5.0
+torch==2.5.1
 
 # Semantic Search
 faiss-cpu==1.7.4
