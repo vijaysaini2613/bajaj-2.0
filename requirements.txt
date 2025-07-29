@@ -7,17 +7,27 @@ gunicorn==21.2.0
 PyJWT==2.8.0
 python-multipart==0.0.6
 
-# Database (optional, can be removed if not using PostgreSQL)
-# SQLAlchemy==2.0.30
-# psycopg2-binary==2.9.9
-
-# Embedding & NLP - Use pre-built wheels
+# Embedding & NLP - Compatible versions
 sentence-transformers==2.6.1
 transformers==4.41.1
-torch==2.3.1+cpu --index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1
 
 # Semantic Search - CPU only version
 faiss-cpu==1.7.4
+
+# Data Processing - Stable versions
+pandas==2.1.4
+numpy==1.24.3
+
+# PDF Processing
+PyMuPDF==1.24.4
+
+# Environment & HTTP
+python-dotenv==1.0.1
+requests==2.31.0
+
+# JSON Processing
+orjson==3.9.0
 
 # Data Processing - Use compatible versions
 pandas==2.1.4

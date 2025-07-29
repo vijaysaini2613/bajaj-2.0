@@ -2,8 +2,7 @@ services:
   - type: web
     name: bajaj-policy-system
     env: python
-    runtime: python-3.10.9
-    buildCommand: pip install -r requirements-deploy.txt
+    buildCommand: chmod +x install.sh && ./install.sh
     startCommand: python -m uvicorn api.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
