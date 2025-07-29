@@ -30,7 +30,7 @@ echo "📦 Installing FAISS..."
 pip install faiss-cpu==1.7.4
 
 echo "📦 Installing PDF processing..."
-pip install PyMuPDF==1.24.4 docx2txt==0.8
+pip install PyMuPDF==1.24.4 docx2txt==0.8 beautifulsoup4==4.12.2
 
 echo "✅ Installation complete!"
 python --version

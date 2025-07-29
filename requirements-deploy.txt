@@ -19,6 +19,7 @@ numpy==1.24.3
 # Document processing
 PyMuPDF==1.24.4
 docx2txt==0.8
+beautifulsoup4==4.12.2
 
 # Utilities
 python-dotenv==1.0.1
